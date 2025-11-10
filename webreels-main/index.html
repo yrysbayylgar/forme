@@ -1,34 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <link href="./styles.css" rel="stylesheet"/>
-    </head>
-    <body>
-        <div class="container">
-            <div>
-                <h1 class="header_text">kto umnee?</h1>
-            </div>
-            <div class="gif_container">
-                <img src="images/IMG_6084.jpg">
-            </div>
-            <div class="buttons">
-                <button class="btn" id="yesButton" onclick="nextPage()">Ylgar</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Akerke</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
+  <head>
+    <meta charset="UTF-8">
+    <link href="./styles.css" rel="stylesheet" />
+    <title>Кто абьюзер</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script>
-            </div>
-        </div>
-    </body>
+      .container {
+        text-align: center;
+      }
+
+      .header_text {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .gif_container img {
+        width: 200px; /* 🔹 Сделал фото маленьким */
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 15px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #a78bfa;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #7c3aed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">Кто абьюзер</h1>
+
+      <div class="gif_container">
+        <img src="images/IMG_1540.jpg" alt="Фото">
+      </div>
+
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Nurai</button>
+        <button class="btn" id="noButton" onmouseover="moveButton('noButton')" onclick="moveButton('noButton')">Ylgar</button>
+      </div>
+    </div>
+
+    <script>
+      function nextPage() {
+        window.location.href = "yes.html";
+      }
+
+      function moveButton(buttonId) {
+        var button = document.getElementById(buttonId);
+        var x = Math.random() * (window.innerWidth - button.offsetWidth);
+        var y = Math.random() * (window.innerHeight - button.offsetHeight);
+        button.style.position = "absolute";
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+      }
+    </script>
+  </body>
 </html>
-
-

@@ -8,7 +8,12 @@ body {
 
 #noButton {
     position: absolute;
-    margin-left: 150px;
+    margin-left: 80px;
+    transition: 0.5s;
+}
+#extraButton {
+    position: absolute;
+    margin-left: 310px;
     transition: 0.5s;
 }
 
